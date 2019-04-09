@@ -1,4 +1,4 @@
-# vue2-perfect-scrollbar
+# vue-simplebar
 Vue.js wrapper for simplebar
 
 # Why would you use it ?
