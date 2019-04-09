@@ -1,5 +1,5 @@
 {
-    "name": "simplebar-vue",
+    "name": "vue-simplebar",
     "version": "0.1.0",
     "description": "Vue.js wrapper for simplebar",
     "paths": {
@@ -7,14 +7,14 @@
         "destination": "dist",
         "example": "examples"
     },
-    "main": "dist/simplebar-vue.cjs.js",
-    "module": "dist/simplebar-vue.esm.js",
-    "browser": "dist/simplebar-vue.umd.js",
-    "style": "dist/simplebar-vue.css",
+    "main": "dist/vue-simplebar.cjs.js",
+    "module": "dist/vue-simplebar.esm.js",
+    "browser": "dist/vue-simplebar.umd.js",
+    "style": "dist/vue-simplebar.css",
     "scripts": {
         "build": "rollup -c --environment production",
         "prepublish": "npm run build && npm run build:css",
-        "build:css": "postcss src/style.css -o dist/simplebar-vue.min.css --env production && postcss src/style.css -o dist/simplebar-vue.css",
+        "build:css": "postcss src/style.css -o dist/vue-simplebar.min.css --env production && postcss src/style.css -o dist/vue-simplebar.css",
         "dev": "webpack-dev-server --config webpack.config.js"
     },
     "keywords": [
@@ -28,7 +28,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hfalucas/simplebar-vue"
+        "url": "https://github.com/hfalucas/vue-simplebar"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",

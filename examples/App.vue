@@ -1,24 +1,74 @@
 <template>
-  <div>
-    <simplebar-vue ref="scroll" class="container">
-      <p v-text="content"></p>
-    </simplebar-vue>
-  </div>
+<div>
+    <h2>Scroll Up & Down</h2>
+    <vue-simplebar ref="scroll" class="container" @scroll-y-reach-end="YBottom++" @scroll-y-reach-start="YTop++">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at mi convallis, tempus ex eget, condimentum
+            metus. Duis finibus nisi et pharetra blandit. Pellentesque rutrum, nibh at dictum vehicula, ligula turpis
+            porta magna, at sodales nulla est eu leo. Vestibulum laoreet risus eros, sit amet eleifend ex cursus vitae.
+            Ut lorem nulla, suscipit quis mauris eu, condimentum pellentesque eros. Integer in tortor eleifend, porta
+            metus ut, facilisis neque. Sed euismod nibh metus, a molestie nisl pulvinar non. Donec tortor nisi,
+            hendrerit vel facilisis quis, auctor non leo. Fusce quis elit sit amet elit finibus dictum.
+            Phasellus eget tellus libero. Vivamus rutrum leo rhoncus enim aliquet, id imperdiet tortor ultricies.
+            Sed ac nunc non elit semper egestas. Nulla facilisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris at mi convallis, tempus ex eget, condimentum metus. Duis finibus nisi et pharetra blandit.
+            Pellentesque rutrum, nibh at dictum vehicula, ligula turpis porta magna, at sodales nulla est eu leo.
+            Vestibulum laoreet risus eros, sit amet eleifend ex cursus vitae. Ut lorem nulla, suscipit quis mauris eu,
+            condimentum pellentesque eros. Integer in tortor eleifend, porta metus ut, facilisis neque. Sed euismod nibh metus,
+            a molestie nisl pulvinar non. Donec tortor nisi, hendrerit vel facilisis quis, auctor non leo. Fusce quis elit
+            sit amet elit finibus dictum. Phasellus eget tellus libero. Vivamus rutrum leo rhoncus enim aliquet, id
+            imperdiet tortor ultricies. Sed ac nunc non elit semper egestas. Nulla facilisi.
+        </p>
+    </vue-simplebar>
+    <div class="event-listener">
+        <p><strong>Scroll reached the TOP of Y axis:</strong> {{YTop}}</p>
+        <p><strong>Scroll reached the BOTTOM of Y axis:</strong> {{YBottom}}</p>
+    </div>
+</div>
 </template>
 
 <script>
 export default {
-    data: () =>({
-        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum'
-    })
+    name: 'example',
+
+    data: () => ({
+        YTop: 0,
+        YBottom: 0
+    }),
+
+    methods: {
+        reachedEnd () {
+            this.Ytimes++
+        }
+    }
 }
 </script>
 
 <style>
+html, body { height: 100%; }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+}
+
 .container {
-    position: relative !important;
-    width: 430px !important;
-    max-height: 140px !important;
-    margin: 40px auto 0 auto;
+    width: 770px !important;
+    height: 128px !important;
+    border: 1px solid #e8e8e8;
+    padding: 12px;
+}
+
+p { margin: 0; padding: 0; }
+
+.event-listener {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
 }
 </style>

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import '../src/style.css'
-import SimplebarVue from '../src'
+import VueSimplebar from '../src'
 
-Vue.use(SimplebarVue, { name: 'simplebar-vue' })
+Vue.use(VueSimplebar, { name: 'vue-simplebar' })
 new Vue({
     el: '#app',
     render: h => h(App)

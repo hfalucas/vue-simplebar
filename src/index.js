@@ -1,24 +1,24 @@
-import SimplebarVue from './SimplebarVue'
+import VueSimplebar from './VueSimplebar'
 
 export function install (Vue, options) {
     if (options) {
         if (options.name && typeof options.name === 'string') {
-            SimplebarVue.name = options.name
+            VueSimplebar.name = options.name
         }
 
         if (options.options && typeof options.options === 'object') {
-            SimplebarVue.props.options.default = () => {
+            VueSimplebar.props.options.default = () => {
                 return options.options
             }
         }
 
         if (options.tag && typeof options.tag === 'string') {
-            SimplebarVue.props.tag.default = options.tag
+            VueSimplebar.props.tag.default = options.tag
         }
     }
 
-    Vue.component(SimplebarVue.name, SimplebarVue)
+    Vue.component(VueSimplebar.name, VueSimplebar)
 }
 
-export { SimplebarVue }
+export { VueSimplebar }
 export default install

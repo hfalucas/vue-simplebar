@@ -1,14 +1,14 @@
+import pkg from './package.json'
 import buble from 'rollup-plugin-buble'
 import { uglify } from 'rollup-plugin-uglify'
-import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import pkg from './package.json'
+import resolve from 'rollup-plugin-node-resolve'
 
 const browser = {
     input: 'src/index.js',
     output: {
         format: 'umd',
-        name: 'SimplebarVue',
+        name: 'VueSimplebar',
         file: pkg.browser
     },
     plugins: [
@@ -24,8 +24,8 @@ const browserMin = {
     input: 'src/index.js',
     output: {
         format: 'umd',
-        name: 'SimplebarVue',
-        file: 'dist/simplebar-vue.umd.min.js'
+        name: 'VueSimplebar',
+        file: 'dist/vue-simplebar.umd.min.js'
     },
     plugins: [
         resolve({

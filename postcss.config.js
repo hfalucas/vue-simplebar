@@ -1,6 +1,6 @@
 var path = require('path')
-var postcssImport = require('postcss-import')
 var cssnano = require('cssnano')
+var postcssImport = require('postcss-import')
 
 module.exports = ctx => ({
     plugins: {
