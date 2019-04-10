@@ -1,11 +1,8 @@
-# vue-simplebar
+# Vue Simplebar
 Vue.js wrapper for simplebar
 
 # Why would you use it ?
-
 Because you want add [simplebar](https://github.com/Grsmto/simplebar) to your Vue project in an easy way, with the plus of having some usefull scroll events and helper methods out of the box.
-
-If you have any reasonable PR you are welcome 🤘
 
 # Install
 ## npm
@@ -32,7 +29,7 @@ import 'vue-simplebar/dist/vue-simplebar.css'
 Vue.use(VueSimplebar)
 ```
 
-Then use it like any other component in your app:
+Then use it like any other component:
 
 ```html
 <vue-simplebar>
@@ -79,7 +76,6 @@ export default {
 
 # Props
 
-
 #### `tag {String}`
 Tag which will be render as perfect scrollbar container
 
@@ -121,3 +117,11 @@ infinite scroll).
     <p> Your scrollable content goes here. </p>
 </vue-simplebar>
 ```
+
+# Contribution
+
+If you have any reasonable PR you are welcome.
+
+# License
+
+[MIT](http://opensource.org/licenses/MIT)
