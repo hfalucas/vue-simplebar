@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue.js wrapper for simplebar</title>
+    <link rel="stylesheet" href="https://unpkg.com/vue-simplebar@latest/dist/vue-simplebar.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div id="app">
+        <h2>Scroll Up & Down</h2>
+        <vue-simplebar class="container" @scroll-y-reach-end="YEnd++" @scroll-y-reach-start="YStart++">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at mi convallis, tempus ex eget, condimentum
+                metus. Duis finibus nisi et pharetra blandit. Pellentesque rutrum, nibh at dictum vehicula, ligula turpis
+                porta magna, at sodales nulla est eu leo. Vestibulum laoreet risus eros, sit amet eleifend ex cursus vitae.
+                Ut lorem nulla, suscipit quis mauris eu, condimentum pellentesque eros. Integer in tortor eleifend, porta
+                metus ut, facilisis neque. Sed euismod nibh metus, a molestie nisl pulvinar non. Donec tortor nisi,
+                hendrerit vel facilisis quis, auctor non leo. Fusce quis elit sit amet elit finibus dictum.
+                Phasellus eget tellus libero. Vivamus rutrum leo rhoncus enim aliquet, id imperdiet tortor ultricies.
+                Sed ac nunc non elit semper egestas. Nulla facilisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris at mi convallis, tempus ex eget, condimentum metus. Duis finibus nisi et pharetra blandit.
+                Pellentesque rutrum, nibh at dictum vehicula, ligula turpis porta magna, at sodales nulla est eu leo.
+                Vestibulum laoreet risus eros, sit amet eleifend ex cursus vitae. Ut lorem nulla, suscipit quis mauris eu,
+                condimentum pellentesque eros. Integer in tortor eleifend, porta metus ut, facilisis neque. Sed euismod nibh metus,
+                a molestie nisl pulvinar non. Donec tortor nisi, hendrerit vel facilisis quis, auctor non leo. Fusce quis elit
+                sit amet elit finibus dictum. Phasellus eget tellus libero. Vivamus rutrum leo rhoncus enim aliquet, id
+                imperdiet tortor ultricies. Sed ac nunc non elit semper egestas. Nulla facilisi.
+            </p>
+        </vue-simplebar>
+        <div class="event-listener">
+            <p><strong>Scroll reached the TOP of Y axis:</strong> {{YStart}}</p>
+            <p><strong>Scroll reached the BOTTOM of Y axis:</strong> {{YEnd}}</p>
+        </div>
+    </div>
+
+    <script src="js/build.js"></script>
 </body>
 </html>

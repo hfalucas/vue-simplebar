@@ -1,6 +1,6 @@
 {
     "name": "vue-simplebar",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Vue.js wrapper for simplebar",
     "paths": {
         "source": "src",
@@ -15,7 +15,10 @@
         "build": "rollup -c --environment production",
         "prepublish": "npm run build && npm run build:css",
         "build:css": "postcss src/style.css -o dist/vue-simplebar.min.css --env production && postcss src/style.css -o dist/vue-simplebar.css",
-        "dev": "webpack-dev-server --config webpack.config.js"
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "keywords": [
         "simplebar",
@@ -46,6 +49,7 @@
         "rollup-plugin-node-resolve": "^3.4.0",
         "rollup-plugin-uglify": "^5.0.2",
         "sass-loader": "^7.1.0",
+        "sass": "^1.15.2",
         "style-loader": "^0.23.0",
         "ts-loader": "^5.1.0",
         "typescript": "^3.0.3",
@@ -55,7 +59,9 @@
         "vue-template-compiler": "^2.5.17",
         "webpack": "^4.17.2",
         "webpack-cli": "^3.1.0",
-        "webpack-dev-server": "^3.1.7"
+        "webpack-dev-server": "^3.1.7",
+        "laravel-mix": "^4.0.7",
+        "cross-env": "^5.1"
     },
     "dependencies": {
         "simplebar": "^3.1.5"
