@@ -47,7 +47,7 @@ Name of your global component.
 **Default**: `VueSimplebar`
 
 #### `tag {String}`
-Tag which will be render as perfect scrollbar container
+Tag which will be render as simplebar container
 
 **Default**: `section`
 
@@ -77,7 +77,7 @@ export default {
 # Props
 
 #### `tag {String}`
-Tag which will be render as perfect scrollbar container
+Tag which will be render as simplebar container
 
 **Default**: `section`
 
