@@ -2,8 +2,6 @@
 Vue.js wrapper for simplebar
 
 # Why would you use it ?
-<center> ![Scrolling](elder-scroll.gif) </center>
-
 First, because custom scrollbars can be very frustrating and you want to add [simplebar](https://github.com/Grsmto/simplebar) to your Vue project in an easy way, with the bonus of having some useful scroll events and helper methods out of the box.
 
 # Install
