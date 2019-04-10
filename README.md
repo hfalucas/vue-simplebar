@@ -2,7 +2,9 @@
 Vue.js wrapper for simplebar
 
 # Why would you use it ?
-Because you want add [simplebar](https://github.com/Grsmto/simplebar) to your Vue project in an easy way, with the plus of having some usefull scroll events and helper methods out of the box.
+<center>![Scrolling](https://media.giphy.com/media/fChkrFBjed904/200w_d.gif)</center>
+
+First, because custom scrollbars can be very frustrating and you want to add [simplebar](https://github.com/Grsmto/simplebar) to your Vue project in an easy way, with the bonus of having some useful scroll events and helper methods out of the box.
 
 # Install
 ## npm
