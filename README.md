@@ -67,6 +67,7 @@ simplebar options.
         <p> Your scrollable content goes here. </p>
     </vue-simplebar>
 </template>
+
 <script>
 import { VueSimplebar } from 'vue-simplebar'
 export default {
@@ -85,7 +86,7 @@ Tag which will be render as perfect scrollbar container
 **Default**: `section`
 
 #### `options {Object}`: [Options](https://github.com/Grsmto/simplebar#options)
-perfect-scrollbar options.
+simplebar options.
 
 # Events
 
