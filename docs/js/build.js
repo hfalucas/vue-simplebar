@@ -18123,7 +18123,7 @@ __webpack_require__.r(__webpack_exports__);
      * @return {void}
      */
     scrollBottom: function scrollBottom() {
-      this.el.scrollTop = this.$refs.container.scrollHeight;
+      this.el.scrollTop = this.el.scrollHeight;
     },
 
     /**

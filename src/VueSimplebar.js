@@ -94,7 +94,7 @@ export default {
          * @return {void}
          */
         scrollBottom () {
-           this.el.scrollTop = this.$refs.container.scrollHeight
+           this.el.scrollTop = this.el.scrollHeight
         },
 
         /**
