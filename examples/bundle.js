@@ -242,6 +242,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'example',
   data: function data() {
@@ -249,6 +255,14 @@ __webpack_require__.r(__webpack_exports__);
       YStart: 0,
       YEnd: 0
     };
+  },
+  methods: {
+    scrollTop: function scrollTop() {
+      this.$refs.scroll.scrollTop();
+    },
+    scrollBottom: function scrollBottom() {
+      this.$refs.scroll.scrollBottom();
+    }
   }
 });
 
@@ -2372,7 +2386,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "\nhtml, body { height: 100%;\n}\nbody {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\nh2 {\n    text-align: center;\n}\n.container {\n    width: 770px !important;\n    height: 128px !important;\n    border: 1px solid #e8e8e8;\n    padding: 12px;\n}\np { margin: 0; padding: 0;\n}\n.event-listener {\n    display: flex;\n    justify-content: space-around;\n    padding: 12px;\n}\n", ""]);
+exports.push([module.i, "\nhtml, body { height: 100%;\n}\nbody {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\nh2 {\n    text-align: center;\n}\n.container {\n    width: 770px !important;\n    height: 128px !important;\n    border: 1px solid #e8e8e8;\n    padding: 12px;\n}\np { margin: 0; padding: 0;\n}\n.event-listener {\n    display: flex;\n    justify-content: space-around;\n    padding: 12px;\n}\n.event-label {\n    display: flex;\n    flex-direction: column;\n}\n", ""]);
 
 // exports
 
@@ -5419,7 +5433,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! can-use-dom */ "./node_modules/can-use-dom/index.js");
 /* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(can_use_dom__WEBPACK_IMPORTED_MODULE_15__);
 /**
- * SimpleBar.js - v4.0.0-alpha.5
+ * SimpleBar.js - v4.0.0
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -5608,8 +5622,20 @@ function () {
 
       _this.el.classList.remove(_this.classNames.dragging);
 
-      document.removeEventListener('mousemove', _this.drag);
-      document.removeEventListener('mouseup', _this.onEndDrag);
+      document.removeEventListener('mousemove', _this.drag, true);
+      document.removeEventListener('mouseup', _this.onEndDrag, true);
+      _this.removePreventClickId = window.setTimeout(function () {
+        // Remove these asynchronously so we still suppress click events
+        // generated simultaneously with mouseup.
+        document.removeEventListener('click', _this.preventClick, true);
+        document.removeEventListener('dblclick', _this.preventClick, true);
+        _this.removePreventClickId = null;
+      });
+    };
+
+    this.preventClick = function (e) {
+      e.preventDefault();
+      e.stopPropagation();
     };
 
     this.el = element;
@@ -5653,7 +5679,8 @@ function () {
         track: {},
         scrollbar: {}
       }
-    }; // Don't re-instantiate over an existing one
+    };
+    this.removePreventClickId = null; // Don't re-instantiate over an existing one
 
     if (this.el.SimpleBar) {
       return;
@@ -6097,8 +6124,16 @@ function () {
     this.axis[axis].dragOffset = eventOffset - scrollbar.getBoundingClientRect()[this.axis[axis].offsetAttr];
     this.draggedAxis = axis;
     this.el.classList.add(this.classNames.dragging);
-    document.addEventListener('mousemove', this.drag);
-    document.addEventListener('mouseup', this.onEndDrag);
+    document.addEventListener('mousemove', this.drag, true);
+    document.addEventListener('mouseup', this.onEndDrag, true);
+
+    if (this.removePreventClickId === null) {
+      document.addEventListener('click', this.preventClick, true);
+      document.addEventListener('dblclick', this.preventClick, true);
+    } else {
+      window.clearTimeout(this.removePreventClickId);
+      this.removePreventClickId = null;
+    }
   }
   /**
    * Drag scrollbar handle
@@ -6851,6 +6886,7 @@ var render = function() {
       _c(
         "vue-simplebar",
         {
+          ref: "scroll",
           staticClass: "container",
           on: {
             "scroll-y-reach-end": function($event) {
@@ -6871,14 +6907,30 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "event-listener" }, [
-        _c("p", [
-          _c("strong", [_vm._v("Scroll reached the TOP of Y axis:")]),
-          _vm._v(" " + _vm._s(_vm.YStart))
+        _c("div", { staticClass: "event-label" }, [
+          _c("p", [
+            _c("strong", [_vm._v("Scroll reached the TOP of Y axis:")]),
+            _vm._v(" " + _vm._s(_vm.YStart))
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            { attrs: { type: "button" }, on: { click: _vm.scrollTop } },
+            [_vm._v("Scroll Top")]
+          )
         ]),
         _vm._v(" "),
-        _c("p", [
-          _c("strong", [_vm._v("Scroll reached the BOTTOM of Y axis:")]),
-          _vm._v(" " + _vm._s(_vm.YEnd))
+        _c("div", { staticClass: "event-label" }, [
+          _c("p", [
+            _c("strong", [_vm._v("Scroll reached the BOTTOM of Y axis:")]),
+            _vm._v(" " + _vm._s(_vm.YEnd))
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            { attrs: { type: "button" }, on: { click: _vm.scrollBottom } },
+            [_vm._v("Scroll Bottom")]
+          )
         ])
       ])
     ],

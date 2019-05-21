@@ -5153,7 +5153,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! can-use-dom */ "./node_modules/can-use-dom/index.js");
 /* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(can_use_dom__WEBPACK_IMPORTED_MODULE_15__);
 /**
- * SimpleBar.js - v4.0.0-alpha.5
+ * SimpleBar.js - v4.0.0
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -5342,8 +5342,20 @@ function () {
 
       _this.el.classList.remove(_this.classNames.dragging);
 
-      document.removeEventListener('mousemove', _this.drag);
-      document.removeEventListener('mouseup', _this.onEndDrag);
+      document.removeEventListener('mousemove', _this.drag, true);
+      document.removeEventListener('mouseup', _this.onEndDrag, true);
+      _this.removePreventClickId = window.setTimeout(function () {
+        // Remove these asynchronously so we still suppress click events
+        // generated simultaneously with mouseup.
+        document.removeEventListener('click', _this.preventClick, true);
+        document.removeEventListener('dblclick', _this.preventClick, true);
+        _this.removePreventClickId = null;
+      });
+    };
+
+    this.preventClick = function (e) {
+      e.preventDefault();
+      e.stopPropagation();
     };
 
     this.el = element;
@@ -5387,7 +5399,8 @@ function () {
         track: {},
         scrollbar: {}
       }
-    }; // Don't re-instantiate over an existing one
+    };
+    this.removePreventClickId = null; // Don't re-instantiate over an existing one
 
     if (this.el.SimpleBar) {
       return;
@@ -5831,8 +5844,16 @@ function () {
     this.axis[axis].dragOffset = eventOffset - scrollbar.getBoundingClientRect()[this.axis[axis].offsetAttr];
     this.draggedAxis = axis;
     this.el.classList.add(this.classNames.dragging);
-    document.addEventListener('mousemove', this.drag);
-    document.addEventListener('mouseup', this.onEndDrag);
+    document.addEventListener('mousemove', this.drag, true);
+    document.addEventListener('mouseup', this.onEndDrag, true);
+
+    if (this.removePreventClickId === null) {
+      document.addEventListener('click', this.preventClick, true);
+      document.addEventListener('dblclick', this.preventClick, true);
+    } else {
+      window.clearTimeout(this.removePreventClickId);
+      this.removePreventClickId = null;
+    }
   }
   /**
    * Drag scrollbar handle
