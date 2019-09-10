@@ -24,3 +24,8 @@ p { margin: 0; padding: 0; }
     justify-content: space-around;
     padding: 12px;
 }
+
+.event-label {
+    display: flex;
+    flex-direction: column;
+}

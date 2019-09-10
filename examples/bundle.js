@@ -2367,7 +2367,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "[data-simplebar] {\n    position: relative;\n    flex-direction: column;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    align-content: flex-start;\n    align-items: flex-start;\n}\n\n.simplebar-wrapper {\n    overflow: hidden;\n    width: inherit;\n    height: inherit;\n    max-width: inherit;\n    max-height: inherit;\n}\n\n.simplebar-mask {\n    direction: inherit;\n    position: absolute;\n    overflow: hidden;\n    padding: 0;\n    margin: 0;\n    left: 0;\n    top: 0;\n    bottom: 0;\n    right: 0;\n    width: auto !important;\n    height: auto !important;\n    z-index: 0;\n}\n\n.simplebar-offset {\n    direction: inherit !important;\n    box-sizing: inherit !important;\n    resize: none !important;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    padding: 0;\n    margin: 0;\n    -webkit-overflow-scrolling: touch;\n}\n\n.simplebar-content-wrapper {\n    direction: inherit;\n    box-sizing: border-box !important;\n    position: relative;\n    display: block;\n    height: 100%; /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */\n    width: auto;\n    visibility: visible;\n    overflow: auto; /* Scroll on this element otherwise element can't have a padding applied properly */\n    max-width: 100%; /* Not required for horizontal scroll to trigger */\n    max-height: 100%; /* Needed for vertical scroll to trigger */\n}\n\n.simplebar-content:before,\n.simplebar-content:after {\n    content: \" \";\n    display: table;\n}\n\n.simplebar-placeholder {\n    max-height: 100%;\n    max-width: 100%;\n    width: 100%;\n    pointer-events: none;\n}\n\n.simplebar-height-auto-observer-wrapper {\n    box-sizing: inherit !important;\n    height: 100%;\n    width: inherit;\n    max-width: 1px;\n    position: relative;\n    float: left;\n    max-height: 1px;\n    overflow: hidden;\n    z-index: -1;\n    padding: 0;\n    margin: 0;\n    pointer-events: none;\n    flex-grow: inherit;\n    flex-shrink: 0;\n    flex-basis: 0;\n}\n\n.simplebar-height-auto-observer {\n    box-sizing: inherit;\n    display: block;\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 1000%;\n    width: 1000%;\n    min-height: 1px;\n    min-width: 1px;\n    overflow: hidden;\n    pointer-events: none;\n    z-index: -1;\n}\n\n.simplebar-track {\n    z-index: 1;\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    pointer-events: none;\n    overflow: hidden;\n}\n\n[data-simplebar].simplebar-dragging .simplebar-track {\n  pointer-events: all;\n}\n\n.simplebar-scrollbar {\n    position: absolute;\n    right: 2px;\n    width: 7px;\n    min-height: 10px;\n}\n\n.simplebar-scrollbar:before {\n    position: absolute;\n    content: \"\";\n    background: black;\n    border-radius: 7px;\n    left: 0;\n    right: 0;\n    opacity: 0;\n    transition: opacity 0.2s linear;\n}\n\n.simplebar-track .simplebar-scrollbar.simplebar-visible:before {\n    /* When hovered, remove all transitions from drag handle */\n    opacity: 0.5;\n    transition: opacity 0s linear;\n}\n\n.simplebar-track.simplebar-vertical {\n    top: 0;\n    width: 11px;\n}\n\n.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {\n    top: 2px;\n    bottom: 2px;\n}\n\n.simplebar-track.simplebar-horizontal {\n    left: 0;\n    height: 11px;\n}\n\n.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {\n    height: 100%;\n    left: 2px;\n    right: 2px;\n}\n\n.simplebar-track.simplebar-horizontal .simplebar-scrollbar {\n    right: auto;\n    left: 0;\n    top: 2px;\n    height: 7px;\n    min-height: 0;\n    min-width: 10px;\n    width: auto;\n}\n\n/* Rtl support */\n\n[data-simplebar-direction=\"rtl\"] .simplebar-track.simplebar-vertical {\n    right: auto;\n    left: 0;\n}\n\n.hs-dummy-scrollbar-size {\n    direction: rtl;\n    position: fixed;\n    opacity: 0;\n    visibility: hidden;\n    height: 500px;\n    width: 500px;\n    overflow-y: hidden;\n    overflow-x: scroll;\n}\n", ""]);
+exports.push([module.i, "[data-simplebar] {\n  position: relative;\n  flex-direction: column;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n}\n\n.simplebar-wrapper {\n  overflow: hidden;\n  width: inherit;\n  height: inherit;\n  max-width: inherit;\n  max-height: inherit;\n}\n\n.simplebar-mask {\n  direction: inherit;\n  position: absolute;\n  overflow: hidden;\n  padding: 0;\n  margin: 0;\n  left: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  width: auto !important;\n  height: auto !important;\n  z-index: 0;\n}\n\n.simplebar-offset {\n  direction: inherit !important;\n  box-sizing: inherit !important;\n  resize: none !important;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  padding: 0;\n  margin: 0;\n  -webkit-overflow-scrolling: touch;\n}\n\n.simplebar-content-wrapper {\n  direction: inherit;\n  box-sizing: border-box !important;\n  position: relative;\n  display: block;\n  height: 100%; /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */\n  width: auto;\n  visibility: visible;\n  overflow: auto; /* Scroll on this element otherwise element can't have a padding applied properly */\n  max-width: 100%; /* Not required for horizontal scroll to trigger */\n  max-height: 100%; /* Needed for vertical scroll to trigger */\n}\n\n.simplebar-content:before,\n.simplebar-content:after {\n  content: ' ';\n  display: table;\n}\n\n.simplebar-placeholder {\n  max-height: 100%;\n  max-width: 100%;\n  width: 100%;\n  pointer-events: none;\n}\n\n.simplebar-height-auto-observer-wrapper {\n  box-sizing: inherit !important;\n  height: 100%;\n  width: 100%;\n  max-width: 1px;\n  position: relative;\n  float: left;\n  max-height: 1px;\n  overflow: hidden;\n  z-index: -1;\n  padding: 0;\n  margin: 0;\n  pointer-events: none;\n  flex-grow: inherit;\n  flex-shrink: 0;\n  flex-basis: 0;\n}\n\n.simplebar-height-auto-observer {\n  box-sizing: inherit;\n  display: block;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 1000%;\n  width: 1000%;\n  min-height: 1px;\n  min-width: 1px;\n  overflow: hidden;\n  pointer-events: none;\n  z-index: -1;\n}\n\n.simplebar-track {\n  z-index: 1;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  pointer-events: none;\n  overflow: hidden;\n}\n\n[data-simplebar].simplebar-dragging .simplebar-track {\n  pointer-events: all;\n}\n\n.simplebar-scrollbar {\n  position: absolute;\n  right: 2px;\n  width: 7px;\n  min-height: 10px;\n}\n\n.simplebar-scrollbar:before {\n  position: absolute;\n  content: '';\n  background: black;\n  border-radius: 7px;\n  left: 0;\n  right: 0;\n  opacity: 0;\n  transition: opacity 0.2s linear;\n}\n\n.simplebar-track .simplebar-scrollbar.simplebar-visible:before {\n  /* When hovered, remove all transitions from drag handle */\n  opacity: 0.5;\n  transition: opacity 0s linear;\n}\n\n.simplebar-track.simplebar-vertical {\n  top: 0;\n  width: 11px;\n}\n\n.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {\n  top: 2px;\n  bottom: 2px;\n}\n\n.simplebar-track.simplebar-horizontal {\n  left: 0;\n  height: 11px;\n}\n\n.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {\n  height: 100%;\n  left: 2px;\n  right: 2px;\n}\n\n.simplebar-track.simplebar-horizontal .simplebar-scrollbar {\n  right: auto;\n  left: 0;\n  top: 2px;\n  height: 7px;\n  min-height: 0;\n  min-width: 10px;\n  width: auto;\n}\n\n/* Rtl support */\n\n[data-simplebar-direction='rtl'] .simplebar-track.simplebar-vertical {\n  right: auto;\n  left: 0;\n}\n\n.hs-dummy-scrollbar-size {\n  direction: rtl;\n  position: fixed;\n  opacity: 0;\n  visibility: hidden;\n  height: 500px;\n  width: 500px;\n  overflow-y: hidden;\n  overflow-x: scroll;\n}\n", ""]);
 
 // exports
 
@@ -5145,55 +5145,6 @@ var index = (function () {
 
 /***/ }),
 
-/***/ "./node_modules/scrollbarwidth/scrollbarWidth.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/scrollbarwidth/scrollbarWidth.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! scrollbarWidth.js v0.1.3 | felixexter | MIT | https://github.com/felixexter/scrollbarWidth */
-(function (root, factory) {
-	if (true) {
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}(this, function () {
-	'use strict';
-
-	function scrollbarWidth() {
-		if (typeof document === 'undefined') {
-			return 0
-		}
-
-		var
-			body = document.body,
-			box = document.createElement('div'),
-			boxStyle = box.style,
-			width;
-
-		boxStyle.position = 'absolute';
-		boxStyle.top = boxStyle.left = '-9999px';
-		boxStyle.width = boxStyle.height = '100px';
-		boxStyle.overflow = 'scroll';
-
-		body.appendChild(box);
-
-		width = box.offsetWidth - box.clientWidth;
-
-		body.removeChild(box);
-
-		return width;
-	}
-
-	return scrollbarWidth;
-}));
-
-
-/***/ }),
-
 /***/ "./node_modules/setimmediate/setImmediate.js":
 /*!***************************************************!*\
   !*** ./node_modules/setimmediate/setImmediate.js ***!
@@ -5421,19 +5372,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var scrollbarwidth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! scrollbarwidth */ "./node_modules/scrollbarwidth/scrollbarWidth.js");
-/* harmony import */ var scrollbarwidth__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(scrollbarwidth__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lodash.throttle */ "./node_modules/lodash.throttle/index.js");
-/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
-/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! lodash.memoize */ "./node_modules/lodash.memoize/index.js");
-/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(lodash_memoize__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
-/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! can-use-dom */ "./node_modules/can-use-dom/index.js");
-/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(can_use_dom__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lodash.throttle */ "./node_modules/lodash.throttle/index.js");
+/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash.memoize */ "./node_modules/lodash.memoize/index.js");
+/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash_memoize__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
+/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! can-use-dom */ "./node_modules/can-use-dom/index.js");
+/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(can_use_dom__WEBPACK_IMPORTED_MODULE_14__);
 /**
- * SimpleBar.js - v4.0.0
+ * SimpleBar.js - v4.2.0
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -5457,6 +5406,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function scrollbarWidth() {
+  if (typeof document === 'undefined') {
+    return 0;
+  }
+
+  var body = document.body;
+  var box = document.createElement('div');
+  var boxStyle = box.style;
+  boxStyle.position = 'fixed';
+  boxStyle.left = 0;
+  boxStyle.visibility = 'hidden';
+  boxStyle.overflowY = 'scroll';
+  body.appendChild(box);
+  var width = box.getBoundingClientRect().right;
+  body.removeChild(box);
+  return width;
+}
 
 var SimpleBar =
 /*#__PURE__*/
@@ -5532,7 +5498,7 @@ function () {
 
     this.onWindowResize = function () {
       // Recalculate scrollbarWidth in case it's a zoom
-      _this.scrollbarWidth = scrollbarwidth__WEBPACK_IMPORTED_MODULE_10___default()();
+      _this.scrollbarWidth = scrollbarWidth();
 
       _this.hideNativeScrollbar();
     };
@@ -5686,13 +5652,13 @@ function () {
       return;
     }
 
-    this.recalculate = lodash_throttle__WEBPACK_IMPORTED_MODULE_11___default()(this.recalculate.bind(this), 64);
-    this.onMouseMove = lodash_throttle__WEBPACK_IMPORTED_MODULE_11___default()(this.onMouseMove.bind(this), 64);
-    this.hideScrollbars = lodash_debounce__WEBPACK_IMPORTED_MODULE_12___default()(this.hideScrollbars.bind(this), this.options.timeout);
-    this.onWindowResize = lodash_debounce__WEBPACK_IMPORTED_MODULE_12___default()(this.onWindowResize.bind(this), 64, {
+    this.recalculate = lodash_throttle__WEBPACK_IMPORTED_MODULE_10___default()(this.recalculate.bind(this), 64);
+    this.onMouseMove = lodash_throttle__WEBPACK_IMPORTED_MODULE_10___default()(this.onMouseMove.bind(this), 64);
+    this.hideScrollbars = lodash_debounce__WEBPACK_IMPORTED_MODULE_11___default()(this.hideScrollbars.bind(this), this.options.timeout);
+    this.onWindowResize = lodash_debounce__WEBPACK_IMPORTED_MODULE_11___default()(this.onWindowResize.bind(this), 64, {
       leading: true
     });
-    SimpleBar.getRtlHelpers = lodash_memoize__WEBPACK_IMPORTED_MODULE_13___default()(SimpleBar.getRtlHelpers);
+    SimpleBar.getRtlHelpers = lodash_memoize__WEBPACK_IMPORTED_MODULE_12___default()(SimpleBar.getRtlHelpers);
     this.init();
   }
   /**
@@ -5833,9 +5799,9 @@ function () {
     // Save a reference to the instance, so we know this DOM node has already been instancied
     this.el.SimpleBar = this; // We stop here on server-side
 
-    if (can_use_dom__WEBPACK_IMPORTED_MODULE_15___default.a) {
+    if (can_use_dom__WEBPACK_IMPORTED_MODULE_14___default.a) {
       this.initDOM();
-      this.scrollbarWidth = scrollbarwidth__WEBPACK_IMPORTED_MODULE_10___default()();
+      this.scrollbarWidth = scrollbarWidth();
       this.recalculate();
       this.initListeners();
     }
@@ -5926,14 +5892,17 @@ function () {
     }
 
     ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
-      _this3.el.addEventListener(e, _this3.onPointerEvent, true);
+      _this3.el.addEventListener(e, _this3.onPointerEvent, {
+        capture: true,
+        passive: true
+      });
     });
     this.el.addEventListener('mousemove', this.onMouseMove);
     this.el.addEventListener('mouseleave', this.onMouseLeave);
     this.contentWrapperEl.addEventListener('scroll', this.onScroll); // Browser zoom triggers a window resize
 
     window.addEventListener('resize', this.onWindowResize);
-    this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_14__["default"](this.recalculate);
+    this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_13__["default"](this.recalculate);
     this.resizeObserver.observe(this.el);
     this.resizeObserver.observe(this.contentEl);
   };
@@ -6164,7 +6133,10 @@ function () {
     }
 
     ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
-      _this4.el.removeEventListener(e, _this4.onPointerEvent);
+      _this4.el.removeEventListener(e, _this4.onPointerEvent, {
+        capture: true,
+        passive: true
+      });
     });
     this.el.removeEventListener('mousemove', this.onMouseMove);
     this.el.removeEventListener('mouseleave', this.onMouseLeave);
@@ -6239,7 +6211,7 @@ SimpleBar.defaultOptions = {
   timeout: 1000
 };
 
-if (can_use_dom__WEBPACK_IMPORTED_MODULE_15___default.a) {
+if (can_use_dom__WEBPACK_IMPORTED_MODULE_14___default.a) {
   SimpleBar.initHtmlApi();
 }
 

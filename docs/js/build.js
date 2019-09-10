@@ -108,6 +108,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   data: {
     YStart: 0,
     YEnd: 0
+  },
+  methods: {
+    scrollTop: function scrollTop() {
+      this.$refs.scroll.scrollTop();
+    },
+    scrollBottom: function scrollBottom() {
+      this.$refs.scroll.scrollBottom();
+    }
   }
 });
 
@@ -4865,55 +4873,6 @@ var index = (function () {
 
 /***/ }),
 
-/***/ "./node_modules/scrollbarwidth/scrollbarWidth.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/scrollbarwidth/scrollbarWidth.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! scrollbarWidth.js v0.1.3 | felixexter | MIT | https://github.com/felixexter/scrollbarWidth */
-(function (root, factory) {
-	if (true) {
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}(this, function () {
-	'use strict';
-
-	function scrollbarWidth() {
-		if (typeof document === 'undefined') {
-			return 0
-		}
-
-		var
-			body = document.body,
-			box = document.createElement('div'),
-			boxStyle = box.style,
-			width;
-
-		boxStyle.position = 'absolute';
-		boxStyle.top = boxStyle.left = '-9999px';
-		boxStyle.width = boxStyle.height = '100px';
-		boxStyle.overflow = 'scroll';
-
-		body.appendChild(box);
-
-		width = box.offsetWidth - box.clientWidth;
-
-		body.removeChild(box);
-
-		return width;
-	}
-
-	return scrollbarWidth;
-}));
-
-
-/***/ }),
-
 /***/ "./node_modules/setimmediate/setImmediate.js":
 /*!***************************************************!*\
   !*** ./node_modules/setimmediate/setImmediate.js ***!
@@ -5141,19 +5100,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 /* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var scrollbarwidth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! scrollbarwidth */ "./node_modules/scrollbarwidth/scrollbarWidth.js");
-/* harmony import */ var scrollbarwidth__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(scrollbarwidth__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lodash.throttle */ "./node_modules/lodash.throttle/index.js");
-/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
-/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! lodash.memoize */ "./node_modules/lodash.memoize/index.js");
-/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(lodash_memoize__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
-/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! can-use-dom */ "./node_modules/can-use-dom/index.js");
-/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(can_use_dom__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lodash.throttle */ "./node_modules/lodash.throttle/index.js");
+/* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash.memoize */ "./node_modules/lodash.memoize/index.js");
+/* harmony import */ var lodash_memoize__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash_memoize__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
+/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! can-use-dom */ "./node_modules/can-use-dom/index.js");
+/* harmony import */ var can_use_dom__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(can_use_dom__WEBPACK_IMPORTED_MODULE_14__);
 /**
- * SimpleBar.js - v4.0.0
+ * SimpleBar.js - v4.2.0
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -5177,6 +5134,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function scrollbarWidth() {
+  if (typeof document === 'undefined') {
+    return 0;
+  }
+
+  var body = document.body;
+  var box = document.createElement('div');
+  var boxStyle = box.style;
+  boxStyle.position = 'fixed';
+  boxStyle.left = 0;
+  boxStyle.visibility = 'hidden';
+  boxStyle.overflowY = 'scroll';
+  body.appendChild(box);
+  var width = box.getBoundingClientRect().right;
+  body.removeChild(box);
+  return width;
+}
 
 var SimpleBar =
 /*#__PURE__*/
@@ -5252,7 +5226,7 @@ function () {
 
     this.onWindowResize = function () {
       // Recalculate scrollbarWidth in case it's a zoom
-      _this.scrollbarWidth = scrollbarwidth__WEBPACK_IMPORTED_MODULE_10___default()();
+      _this.scrollbarWidth = scrollbarWidth();
 
       _this.hideNativeScrollbar();
     };
@@ -5406,13 +5380,13 @@ function () {
       return;
     }
 
-    this.recalculate = lodash_throttle__WEBPACK_IMPORTED_MODULE_11___default()(this.recalculate.bind(this), 64);
-    this.onMouseMove = lodash_throttle__WEBPACK_IMPORTED_MODULE_11___default()(this.onMouseMove.bind(this), 64);
-    this.hideScrollbars = lodash_debounce__WEBPACK_IMPORTED_MODULE_12___default()(this.hideScrollbars.bind(this), this.options.timeout);
-    this.onWindowResize = lodash_debounce__WEBPACK_IMPORTED_MODULE_12___default()(this.onWindowResize.bind(this), 64, {
+    this.recalculate = lodash_throttle__WEBPACK_IMPORTED_MODULE_10___default()(this.recalculate.bind(this), 64);
+    this.onMouseMove = lodash_throttle__WEBPACK_IMPORTED_MODULE_10___default()(this.onMouseMove.bind(this), 64);
+    this.hideScrollbars = lodash_debounce__WEBPACK_IMPORTED_MODULE_11___default()(this.hideScrollbars.bind(this), this.options.timeout);
+    this.onWindowResize = lodash_debounce__WEBPACK_IMPORTED_MODULE_11___default()(this.onWindowResize.bind(this), 64, {
       leading: true
     });
-    SimpleBar.getRtlHelpers = lodash_memoize__WEBPACK_IMPORTED_MODULE_13___default()(SimpleBar.getRtlHelpers);
+    SimpleBar.getRtlHelpers = lodash_memoize__WEBPACK_IMPORTED_MODULE_12___default()(SimpleBar.getRtlHelpers);
     this.init();
   }
   /**
@@ -5553,9 +5527,9 @@ function () {
     // Save a reference to the instance, so we know this DOM node has already been instancied
     this.el.SimpleBar = this; // We stop here on server-side
 
-    if (can_use_dom__WEBPACK_IMPORTED_MODULE_15___default.a) {
+    if (can_use_dom__WEBPACK_IMPORTED_MODULE_14___default.a) {
       this.initDOM();
-      this.scrollbarWidth = scrollbarwidth__WEBPACK_IMPORTED_MODULE_10___default()();
+      this.scrollbarWidth = scrollbarWidth();
       this.recalculate();
       this.initListeners();
     }
@@ -5646,14 +5620,17 @@ function () {
     }
 
     ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
-      _this3.el.addEventListener(e, _this3.onPointerEvent, true);
+      _this3.el.addEventListener(e, _this3.onPointerEvent, {
+        capture: true,
+        passive: true
+      });
     });
     this.el.addEventListener('mousemove', this.onMouseMove);
     this.el.addEventListener('mouseleave', this.onMouseLeave);
     this.contentWrapperEl.addEventListener('scroll', this.onScroll); // Browser zoom triggers a window resize
 
     window.addEventListener('resize', this.onWindowResize);
-    this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_14__["default"](this.recalculate);
+    this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_13__["default"](this.recalculate);
     this.resizeObserver.observe(this.el);
     this.resizeObserver.observe(this.contentEl);
   };
@@ -5884,7 +5861,10 @@ function () {
     }
 
     ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
-      _this4.el.removeEventListener(e, _this4.onPointerEvent);
+      _this4.el.removeEventListener(e, _this4.onPointerEvent, {
+        capture: true,
+        passive: true
+      });
     });
     this.el.removeEventListener('mousemove', this.onMouseMove);
     this.el.removeEventListener('mouseleave', this.onMouseLeave);
@@ -5959,7 +5939,7 @@ SimpleBar.defaultOptions = {
   timeout: 1000
 };
 
-if (can_use_dom__WEBPACK_IMPORTED_MODULE_15___default.a) {
+if (can_use_dom__WEBPACK_IMPORTED_MODULE_14___default.a) {
   SimpleBar.initHtmlApi();
 }
 

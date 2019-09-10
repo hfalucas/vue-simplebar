@@ -1,6 +1,6 @@
 {
     "name": "vue-simplebar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Vue.js wrapper for simplebar",
     "paths": {
         "source": "src",
@@ -64,6 +64,6 @@
         "webpack-dev-server": "^3.1.7"
     },
     "dependencies": {
-        "simplebar": "4.0.0"
+        "simplebar": "4.2.0"
     }
 }
