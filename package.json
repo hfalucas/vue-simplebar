@@ -15,7 +15,7 @@
         "build": "rollup -c --environment production",
         "dev": "rollup -c -w",
         "prepublish": "npm run build && npm run build:css",
-        "build:css": "postcss src/style.css -o dist/vue-simplebar.min.css --env production",
+        "build:css": "postcss src/style.css -o dist/vue-simplebar.min.css --env production"
     },
     "keywords": [
         "simplebar",
