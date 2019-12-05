@@ -1,6 +1,3 @@
-import Vue from 'vue'
-import VueSimplebar from '../src/VueSimplebar'
-
 const app = new Vue({
     el: '#app',
 
