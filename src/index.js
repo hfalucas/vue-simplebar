@@ -1,6 +1,6 @@
 import VueSimplebar from './VueSimplebar'
 
-export function install (Vue, options) {
+const install = (Vue, options) => {
     if (options) {
         if (options.name && typeof options.name === 'string') {
             VueSimplebar.name = options.name
@@ -22,3 +22,7 @@ export function install (Vue, options) {
 
 export { VueSimplebar }
 export default install
+
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(install)
+}

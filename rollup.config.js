@@ -1,22 +1,22 @@
 import pkg from './package.json'
-import buble from 'rollup-plugin-buble'
-import { uglify } from 'rollup-plugin-uglify'
+import vue from 'rollup-plugin-vue'
+import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 import resolve from 'rollup-plugin-node-resolve'
 
 const browser = {
     input: 'src/index.js',
     output: {
         format: 'umd',
-        name: 'VueSimplebar',
+        name: 'vue-simplebar',
         file: pkg.browser
     },
     plugins: [
-        buble(),
-        resolve({
-            browser: true, jsnext: true, main: true
-        }),
-        commonjs()
+        commonjs(),
+        vue({ compileTemplate: true }),
+        babel({ exclude: 'node_modules/**' }),
+        resolve({ mainFields: ['browser', 'main', 'jsnext'] })
     ]
 }
 
@@ -24,38 +24,44 @@ const browserMin = {
     input: 'src/index.js',
     output: {
         format: 'umd',
-        name: 'VueSimplebar',
+        name: 'vue-simplebar',
         file: 'dist/vue-simplebar.umd.min.js'
     },
     plugins: [
-        resolve({
-            browser: true, jsnext: true, main: true
-        }),
+        terser(),
         commonjs(),
-        buble(),
-        uglify()
+        vue({ compileTemplate: true }),
+        babel({ exclude: 'node_modules/**' }),
+        resolve({ mainFields: ['browser', 'main', 'jsnext'] })
     ]
 }
 
-const nodeModules = {
+const esm = {
     input: 'src/index.js',
-    output: [
-        {
-            format: 'cjs',
-            file: pkg.main
-        },
-        {
-            format: 'esm',
-            file: pkg.module
-        }
-    ],
+    output: {
+        format: 'esm',
+        file: pkg.module
+    },
     plugins: [
-    ],
-    external: [ 'simplebar' ]
+        vue()
+    ]
 }
 
+const ssr = {
+    input: 'src/index.js',
+    output: {
+        format: 'cjs',
+        file: pkg.main
+    },
+    plugins: [
+        vue({ template: { optimizeSSR: true } })
+    ]
+}
+
+
 export default [
-    browser,
     browserMin,
-    nodeModules
+    browser,
+    esm,
+    ssr
 ]
