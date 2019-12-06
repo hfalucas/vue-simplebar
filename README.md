@@ -24,7 +24,7 @@ yarn add vue-simplebar
 You can import and register the plugin in the entry point of your application like so:
 ```js
 import VueSimplebar from 'vue-simplebar'
-import 'vue-simplebar/dist/vue-simplebar.css'
+import 'vue-simplebar/dist/vue-simplebar.min.css'
 
 Vue.use(VueSimplebar)
 ```
@@ -71,7 +71,7 @@ export default {
     components: { VueSimplebar }
 }
 </script>
-<style src="vue-simplebar/dist/vue-simplebar.css"/>
+<style src="vue-simplebar/dist/vue-simplebar.min.css"/>
 ```
 
 # Props
