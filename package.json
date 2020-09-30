@@ -1,6 +1,6 @@
 {
     "name": "vue-simplebar",
-    "version": "2.0.0",
+    "version": "2.3.0",
     "description": "Vue.js wrapper for simplebar",
     "paths": {
         "source": "src",
@@ -46,6 +46,6 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "simplebar": "5.0.7"
+        "simplebar": "^5.3.0"
     }
 }
